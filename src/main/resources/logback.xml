@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<configuration debug="false" scan="true">
+
+	<property name="log.level" value="debug"></property>
+	<property name="log.maxHistory" value="30"></property>
+    <property name="log.filePath" value="/yhypt_project/scm/scm_log"></property>
+	<property name="log.pattern" value="[%X{UUID}]-[%X{userbm}]-[%X{username}]-%d{yyyy-MM-dd HH:mm:ss.SSS}-[%X{mk}]-[%X{method}]-%msg%n"></property>
+
+<!--  控制台-->
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+	</appender>
+
+
+	<appender name="LogAppender"  class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!--  文件路径 -->
+		<file>${log.filePath}/scm.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 文件名称-->
+			<fileNamePattern>${log.filePath}/log/demo-log.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+			<!-- 文件最大保存数量-->
+			<maxHistory>${log.maxHistory}</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+
+	</appender>
+
+	<logger name="com.example.demo" level="info" additivity="true">
+		<appender-ref ref="LogAppender"></appender-ref>
+	</logger>
+
+	<root level="INFO">
+		<appender-ref ref="consoleAppender" />
+	</root>
+</configuration>

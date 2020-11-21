@@ -1,0 +1,38 @@
+HELP.md
+target/
+log.filePath_IS_UNDEFINED/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**
+!**/src/test/**
+
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+log.*
+.idea
+*.iws
+*.iml
+*.ipr
+*.cmd
+*.mvn
+mvnw
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+
+### VS Code ###
+.vscode/

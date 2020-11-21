@@ -1,0 +1,14 @@
+1  搭建springboot 项目
+2. 开发登录页面
+3. 首页菜单管理
+
+--  目录结构说明
+
+
+controller 包控制层，  只写返回业务，不写业务逻辑
+service   业务层，写业务代码
+mapper,   mybatis  生成  mappger 类
+entity     对应数据库对象，与数据库一致不允许修改
+vo        返回前端类,前端需要什么字段，写什么字段，不需要的不要写
+dto       前端请求类
+common    公共包
